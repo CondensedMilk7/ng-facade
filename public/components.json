@@ -1,0 +1,36 @@
+{
+  "components": [
+    {
+      "id": "WeatherComponent",
+      "componentData": {
+        "temperature": 16,
+        "humidity": 40
+      }
+    },
+    {
+      "id": "NewsComponent",
+      "componentData": {
+        "mostRecent": "Some things just happened!"
+      }
+    },
+    {
+      "id": "FeedComponent",
+      "componentData": {
+        "posts": [
+          {
+            "title": "This is a title 1",
+            "body": "This is a body 1"
+          },
+          {
+            "title": "This is a title 2",
+            "body": "This is a body 2"
+          },
+          {
+            "title": "This is a title 3",
+            "body": "This is a body 3"
+          }
+        ]
+      }
+    }
+  ]
+}
