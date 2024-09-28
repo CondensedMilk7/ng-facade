@@ -1,15 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { ComponentsResponse } from './component-response';
-import { map, tap } from 'rxjs';
+import { map, Observable, tap } from 'rxjs';
 import { COMPONENT_TOKENS } from './component-tokens';
+import { ComponentsResponse, FacadeComponent } from './component-response';
 
 @Injectable({ providedIn: 'root' })
 export class ComponentsService {
   private readonly http = inject(HttpClient);
   private tokens = COMPONENT_TOKENS;
 
-  getComponents() {
+  getComponents(): Observable<FacadeComponent[]> {
     return this.http
       .get<{ components: ComponentsResponse }>('/components.json')
       .pipe(

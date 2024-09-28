@@ -6,7 +6,8 @@ import { Component, Input } from '@angular/core';
   imports: [],
   template: `
     <hr />
-    <p>News: {{ mostRecent }}</p>
+    <p>News:</p>
+    <p>{{ mostRecent }}</p>
   `,
 })
 export class NewsComponent {

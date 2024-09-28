@@ -11,11 +11,14 @@ export interface Post {
   imports: [],
   template: `
     <hr />
-    <p>feed</p>
-    @for (post of posts; track post.title) {
-      <p>{{ post.title }}</p>
-      <p>{{ post.body }}</p>
-    }
+    <p>Feed:</p>
+    <ul>
+      @for (post of posts; track post.title) {
+        <li>
+          <b>{{ post.title }}:</b> {{ post.body }}
+        </li>
+      }
+    </ul>
   `,
 })
 export class FeedComponent {

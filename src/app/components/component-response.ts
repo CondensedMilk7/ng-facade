@@ -1,28 +1,16 @@
 import { InjectionToken } from '@angular/core';
-import { Post } from './feed/feed.component';
 
 export interface ComponentResponse<ComponentId, ComponentData extends object> {
   id: ComponentId;
   componentData: ComponentData;
 }
 
-export type WeatherComponentResponse = ComponentResponse<
-  'WeatherComponent',
-  { temperature: number; humidity: number }
->;
+export type ComponentsResponse = ComponentResponse<string, object>[];
 
-export type NewsComponentResponse = ComponentResponse<
-  'NewsComponent',
-  { mostRecent: string }
->;
+export type Constructor<T = any> = new (...args: any[]) => T;
+export type ComponentClass<T = any> = InstanceType<Constructor<T>>;
 
-export type FeedComponentResponse = ComponentResponse<
-  'FeedComponent',
-  { posts: Post[] }
->;
-
-export type ComponentsResponse = [
-  WeatherComponentResponse,
-  NewsComponentResponse,
-  FeedComponentResponse,
-];
+export interface FacadeComponent {
+  token: InjectionToken<ComponentClass>;
+  data: object;
+}
