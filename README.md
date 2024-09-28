@@ -1,6 +1,7 @@
 # NgFacade
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.6.
+A little proof of concept. The aim is to have an app that can dynamically and lazily render components which are dictated from the back-end.
+All the component names, ordering and supplied data are fetched from the back-end and rendered on the client side.
 
 ## Development server
 

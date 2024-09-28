@@ -6,7 +6,7 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { ComponentsService } from './components/components.service';
-import { FacadeComponent } from './components/component-response';
+import { ComponentClass, FacadeComponent } from './components/component-response';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
 
   renderComponents(components: FacadeComponent[]) {
     components.forEach(({ token, data }) => {
-      this.injector.get(token)?.then((componentClass: any) => {
+      this.injector.get(token)?.then((componentClass: ComponentClass) => {
         const component = this.vcr.createComponent(componentClass);
 
         Object.entries(data).forEach(([key, value]) => {
