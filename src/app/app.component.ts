@@ -11,8 +11,7 @@ import { ComponentClass, FacadeComponent } from './components/component-response
 @Component({
   selector: 'app-root',
   standalone: true,
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  template: ``,
 })
 export class AppComponent implements OnInit {
   private readonly vcr = inject(ViewContainerRef);

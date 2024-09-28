@@ -11,6 +11,6 @@ export type Constructor<T = any> = new (...args: any[]) => T;
 export type ComponentClass<T = any> = InstanceType<Constructor<T>>;
 
 export interface FacadeComponent {
-  token: InjectionToken<ComponentClass>;
+  token: InjectionToken<Promise<ComponentClass>>;
   data: object;
 }
